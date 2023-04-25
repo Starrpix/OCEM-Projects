@@ -125,7 +125,7 @@ int main()
 						bal_transfer();
 						break;	
 					case 5:
-				    break;
+					goto dash;
 				    	
 					default:
 						printf("\n\t\t\t\t Please Enter correct option");
