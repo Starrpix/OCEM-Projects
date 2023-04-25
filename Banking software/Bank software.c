@@ -96,7 +96,7 @@ int main()
 			if(strcmp(c.password,check_password)==0)
 			{
 				int second_choice;
-					   			 //char ans='\t';
+					   		 //char ans='\t';
 				while(1) 		// (ans!='\n') //use this condition to eliminate the use of goto statement.
 					{
 				
