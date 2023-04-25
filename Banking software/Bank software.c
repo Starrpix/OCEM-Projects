@@ -1,6 +1,4 @@
-
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
 void bal_show();
@@ -24,7 +22,7 @@ int main()
 		dash:	
 	system("cls");
 	printf("\n\t\t\t\t------------Banking Software------------\n");
-	printf("\n\t\t\t\t 1: Resister Your Account\n");
+	printf("\n\t\t\t\t 1: Register Your Account\n");
 	printf("\n\t\t\t\t 2: Login\n");
 	printf("\n\t\t\t\t 3: Exit\n");
 	printf("\n\t\t\t\t Enter your Choice : ");
@@ -55,7 +53,7 @@ int main()
 	}
 	else
 	{
-	
+	fclose(fp);
 		
 	fp=fopen(file_name,"w");
 	if(fp==NULL)
@@ -64,7 +62,9 @@ int main()
 	}
 	else
 	{
-	fwrite(&c,sizeof(struct customer),1,fp);	
+
+
+	fwrite(&c,sizeof(struct customer),1,fp);	//writes into the file 
 	printf("\n\t\t\t\t Your Account is Successfully Registered ");
 	fclose(fp);
 	}
@@ -92,7 +92,7 @@ int main()
             }
            else 
 			{
-			fread(&c,sizeof(struct customer),1,fp);
+			fread(&c,sizeof(struct customer),1,fp); // it will take data from file to structure
 			if(strcmp(c.password,check_password)==0)
 			{
 				int second_choice;
@@ -205,7 +205,7 @@ void bal_withdraw()
 		}
 		else
 		{
-			fread(&c,sizeof(struct customer),1,fp);
+			fread(&c,sizeof(struct customer),1,fp);//whatever was in file it is stored in structure
 			printf("\n\t\t\t\t Enter Withdraw Amount : ");
 			scanf("%f",&withdraw_balance);
 			if(withdraw_balance<=c.balance)
