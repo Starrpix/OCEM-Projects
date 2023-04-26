@@ -1,13 +1,12 @@
-
-
 #include <stdio.h>
-//#include <conio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ncurses.h>
 void bal_show();
 void bal_add();
 void bal_withdraw();
 void bal_transfer();
+
 struct customer
 {
 	char name[20];
@@ -20,7 +19,14 @@ char check_number[50];
 char check_password[50];
 int main()
 {
-
+    
+    initscr();
+	raw();
+	start_color();
+	init_pair(1,COLOR_RED,COLOR_BLUE);
+	attron(COLOR_PAIR(1));
+    printw("Ah my eyes!");
+	attroff(COLOR_PAIR(1));
 	FILE *fp;
 	int first_choice;
 	while (first_choice != 3)
@@ -56,7 +62,6 @@ int main()
 			{
 				printf("\n\n\t\t\t\t Account Already Registered !!!!!");
 				fclose(fp);
-				getch();
 			}
 			else
 			{
@@ -73,7 +78,6 @@ int main()
 					printf("\n\t\t\t\t Your Account is Successfully Registered ");
 					fclose(fp);
 				}
-				getch();
 			}
 		}
 		if (first_choice == 2)
@@ -91,7 +95,6 @@ int main()
 			if (fp == NULL)
 			{
 				printf("\n\t\t\t\t Account not found. Please register first.\n");
-				getch();
 				continue;
 			}
 			else
@@ -142,8 +145,7 @@ int main()
 					printf("\n\t\t\t\t Incorret Password");
 				}
 			}
-			fclose(fp); 
-			getch();
+			fclose(fp);
 		}
 	}
 }
@@ -163,7 +165,6 @@ void bal_show()
 		fread(&c, sizeof(struct customer), 1, fp);
 		printf("\n\t\t\t\t Balance : %0.2f", c.balance);
 		fclose(fp);
-		getch();
 	}
 }
 
@@ -190,7 +191,6 @@ void bal_add() // function to add balance
 
 	fclose(fp);
 
-	getch();
 }
 
 void bal_withdraw()
@@ -233,7 +233,6 @@ void bal_withdraw()
 			fclose(fp);
 		}
 	}
-	getch();
 }
 
 void bal_transfer()
@@ -288,4 +287,5 @@ void bal_transfer()
 		}
 	}
 	getch();
+	endwin();
 }
