@@ -27,12 +27,30 @@ int main()
 	// level for goto control structure
 	dash:
 		system("clear");
-		printf("\n\t\t\t\t------------Banking Software------------\n");
-		printf("\n\t\t\t\t 1: Resister Your Account\n");
-		printf("\n\t\t\t\t 2: Login\n");
-		printf("\n\t\t\t\t 3: Exit\n");
-		printf("\n\t\t\t\t Enter your Choice : ");
-		scanf("%d", &first_choice);
+	printf("\n\t\t\t||=======================================================================||");
+
+        printf("\n\t\t\t||                                                                       ||");
+
+        printf("\n\t\t\t||---------------------------Banking Software----------------------------||");
+
+        printf("\n\t\t\t||                                                                       ||");
+
+        printf("\n\t\t\t||=======================================================================||");
+         printf("\n\t\t\t||          1: Resister Your Account                                     ||");
+
+        printf("\n\t\t\t||-----------------------------------------------------------------------||");
+
+        printf("\n\t\t\t||          2: Login      			       	                 ||");
+
+        printf("\n\t\t\t||-----------------------------------------------------------------------||");
+
+        printf("\n\t\t\t||          3: Exit    					                 ||");
+
+        printf("\n\t\t\t||=======================================================================||");
+        printf("\n\t\t\t||=======================================================================||\n");
+
+        printf("\n\t\t\t         Please Enter Your Choice:: ");
+		scanf("\t\t\t\t%d", &first_choice);
 
 		if (first_choice == 1)
 		{
