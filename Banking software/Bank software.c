@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ncurses.h>
+
 void bal_show();
 void bal_add();
 void bal_withdraw();
@@ -20,20 +20,13 @@ char check_password[50];
 int main()
 {
     
-    initscr();
-	raw();
-	start_color();
-	init_pair(1,COLOR_RED,COLOR_BLUE);
-	attron(COLOR_PAIR(1));
-    printw("Ah my eyes!");
-	attroff(COLOR_PAIR(1));
 	FILE *fp;
 	int first_choice;
 	while (first_choice != 3)
 	{
 	// level for goto control structure
 	dash:
-		system("cls");
+		system("clear");
 		printf("\n\t\t\t\t------------Banking Software------------\n");
 		printf("\n\t\t\t\t 1: Resister Your Account\n");
 		printf("\n\t\t\t\t 2: Login\n");
@@ -44,7 +37,7 @@ int main()
 		if (first_choice == 1)
 		{
 			char file_name[50];
-			system("cls");
+			system("clear");
 			printf("\n\t\t\t\t------------REGISTER YOUR ACCOUNT------------\n");
 			printf("\n\t\t\t\t Enter Your Name : ");
 			scanf("%s", c.name);
@@ -83,7 +76,7 @@ int main()
 		if (first_choice == 2)
 		{
 
-			system("cls");
+			system("clear");
 			printf("\n\t\t\t\t------------LOGIN PORTAL------------\n");
 			printf("\n\t\t\t\t Enter Your Phone Number : ");
 			scanf("%s", check_number);
@@ -107,7 +100,7 @@ int main()
 					while (1) // (ans!='\n') //use this condition to eliminate the use of goto statement.
 					{
 
-						system("cls");
+						system("clear");
 						printf("\n\t\t\t\t------------DASHBOARD------------\n");
 						printf("\n\t\t\t\t 1: Show Balance\n");
 						printf("\n\t\t\t\t 2: Add Balance\n");
@@ -153,7 +146,7 @@ int main()
 void bal_show()
 {
 	FILE *fp;
-	system("cls");
+	system("clear");
 	printf("\n\t\t\t\t------------ACCOUNT BALANCE------------\n");
 	fp = fopen(check_number, "r");
 	if (fp == NULL)
@@ -173,7 +166,7 @@ void bal_add() // function to add balance
 	float adding_amount;
 	FILE *fp;
 	fp = fopen(check_number, "w");
-	system("cls");
+	system("clear");
 	printf("\n\t\t\t\t------------ADD BALANCE------------\n");
 	printf("\n\t\t\t\t Enter The Amount : ");
 	scanf("%f", &adding_amount);
@@ -195,7 +188,7 @@ void bal_add() // function to add balance
 
 void bal_withdraw()
 {
-	system("cls");
+	system("clear");
 	printf("\n\t\t\t\t------------WITHDRAW BALANCE------------\n");
 	float withdraw_balance;
 	FILE *fp;
@@ -240,7 +233,7 @@ void bal_transfer()
 	FILE *fp_sender, *fp_receiver;
 	char receiver_number[50];
 	float transfer_amount;
-	system("cls");
+	system("clear");
 	printf("\n\t\t\t\t------------BALANCE TRANSFER------------\n");
 	printf("\n\t\t\t\t Enter the Receiver Phone Number : ");
 	scanf("%s", receiver_number);
@@ -286,6 +279,4 @@ void bal_transfer()
 			fclose(fp_sender);
 		}
 	}
-	getch();
-	endwin();
 }
