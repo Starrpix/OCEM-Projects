@@ -56,15 +56,34 @@ int main()
 		{
 			char file_name[50];
 			system("clear");
-			printf("\n\t\t\t\t------------REGISTER YOUR ACCOUNT------------\n");
-			printf("\n\t\t\t\t Enter Your Name : ");
-			scanf("%s", c.name);
-			printf("\n\t\t\t\t Enter Your Phone Number : ");
+			printf("\n||=======================================================================||");
+
+        printf("\n||                                                                       ||");
+
+        printf("\n||----------------------------REGISTER YOUR ACCOUNT----------------------||");
+
+        printf("\n||                                                                       ||");
+
+        printf("\n||=======================================================================||");
+
+        printf("\n||          Enter Your Name : ");
+        	scanf("%s", c.name);
+
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          Enter Your Phone Number : ");
+        
 			scanf("%s", c.phone);
-			printf("\n\t\t\t\t Enter Your Account Number : ");
-			scanf("%s", c.acc);
-			printf("\n\t\t\t\t Create Your Password : ");
-			scanf("%s", c.password);
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          Enter Your Account Number : ");
+        	scanf("%s", c.acc);
+
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          Create Your Password : ");
+        	scanf("%s", c.password);
+         printf("\n||=======================================================================||");
 
 			strcpy(file_name, c.phone);
 			strcat(file_name, ".txt");
@@ -119,14 +138,39 @@ int main()
 					{
 
 						system("clear");
-						printf("\n\t\t\t\t------------DASHBOARD------------\n");
-						printf("\n\t\t\t\t 1: Show Balance\n");
-						printf("\n\t\t\t\t 2: Add Balance\n");
-						printf("\n\t\t\t\t 3: Withdraw Balance\n");
-						printf("\n\t\t\t\t 4: Transfer Balance\n");
-						printf("\n\t\t\t\t 5: Logout\n");
-						printf("\n\t\t\t\t Enter your choice : ");
-						scanf("%d", &second_choice);
+						 printf("\n||=======================================================================||");
+
+        printf("\n||                                                                       ||");
+
+        printf("\n||----------------------------DASHBOARD--------------------------------- ||");
+
+        printf("\n||                                                                       ||");
+
+        printf("\n||=======================================================================||");
+
+        printf("\n||          1: Show Balance                                              ||");
+
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          2: Add Balance                                               ||");
+
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          3: Withdraw Balance                                          ||");
+
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          4: Transfer Balance                                          ||");
+
+        printf("\n||-----------------------------------------------------------------------||");
+
+        printf("\n||          5: Logout                                                    ||");
+
+        printf("\n||=======================================================================||");
+
+        printf("\n  Please Enter Your choice:: ");
+
+       scanf("%d", &second_choice);
 
 						switch (second_choice)
 						{
