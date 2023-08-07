@@ -1,4 +1,4 @@
-Project Title
+
 <h1>Blood Searcher</h1>
 
 Description
