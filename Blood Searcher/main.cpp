@@ -137,7 +137,7 @@ Blood_Donator Blood_Donator::donors[MAX_DONORS] = {};
 Blood_Donator* Blood_Donator::loggedInUser = nullptr; // Initialize the loggedInUser pointer
 
 int main() {
-    Blood_Donator* obj = nullptr;
+    Blood_Donator* obj = new Blood_Donator;
 
     while (true) {
         cout << "\nBlood Bank Tracker\n\n";
@@ -145,7 +145,9 @@ int main() {
         cout << "1. Register as a Blood Donor" << endl;
         cout << "2. Login" << endl;
         cout << "3. Search Donors" << endl;
-        cout << "4. Exit" << endl << endl;
+        cout << "4. Exit" << endl;
+        cout << "5. Logout" << endl<<endl;
+
 
         int choice;
         cin >> choice;
@@ -156,11 +158,15 @@ int main() {
             obj->registerUser();
         } else if (choice == 2) {
             if (obj != nullptr) {
-                cout << "You are already logged in." << endl;
-            } else {
-                obj = new Blood_Donator;
-                obj->login();
+                delete obj;
             }
+                obj = new Blood_Donator;
+            if(obj->login()){
+                cout << "You have successfully logged in." << endl;
+                           } else {
+                               cout << "Login failed. Please try again." << endl;
+            }
+            
         } else if (choice == 3) {
             if (Blood_Donator::loggedInUser != nullptr) {
                 cout << "A. Search by Blood Group" << endl;
@@ -182,7 +188,17 @@ int main() {
             cout << "Exiting Program" << endl;
             delete obj;
             break;
-        } else {
+        }
+        else if (choice == 5) {
+            if (Blood_Donator::loggedInUser != nullptr) {
+                cout << "Logging out..." << endl;
+                Blood_Donator::loggedInUser = nullptr;
+            } else {
+                cout << "You are not logged in." << endl;
+            }
+        }
+        
+        else {
             cout << "Invalid Choice." << endl;
         }
 
@@ -199,4 +215,4 @@ int main() {
 }
 
 
-//Arbin Chhatkuli
+
